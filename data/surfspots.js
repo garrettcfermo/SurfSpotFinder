@@ -1,16 +1,3 @@
-// Seal Beach
-// Bolsa Beach
-// Golden West
-// Huntington Beach
-// Newport 
-// Blackies
-// Salt Creek
-// Doheny
-// San Clemente Pier
-// T-Street
-// Trestles
-// San Onofre
-
 var surfSpotArray = [
   {
     id:1,
@@ -22,7 +9,7 @@ var surfSpotArray = [
     perferred_board: 'Longboard',
     perferred_foot: 'Goofy',
     wave_direction: 'Left',
-    img_url: '../images/sealbeach.jpg'
+    img_url: './assets/images/sealbeach.jpg'
   },
   {
     id:2,
@@ -34,7 +21,7 @@ var surfSpotArray = [
     perferred_board: 'Funboard',
     perferred_foot: 'Both',
     wave_direction: 'Both',
-    img_url: '../images/bolsachicabeach.jpg'
+    img_url: './assets/images/bolsachicabeach.jpg'
   },
   {
     id:3,
@@ -46,7 +33,7 @@ var surfSpotArray = [
     perferred_board: 'Funboard',
     perferred_foot: 'Both',
     wave_direction: 'Both',
-    img_url: '../images/goldenwestbeach.jpg'
+    img_url: './assets/images/goldenwestbeach.jpg'
   },
   {
     id:4,
@@ -58,7 +45,7 @@ var surfSpotArray = [
     perferred_board: 'Funboard',
     perferred_foot: 'Both',
     wave_direction: 'Both',
-    img_url: '../images/huntingtonbeach.jpg'
+    img_url: './assets/images/huntingtonbeach.jpg'
   },
   {
     id:5,
@@ -70,7 +57,7 @@ var surfSpotArray = [
     perferred_board: 'Thruster',
     perferred_foot: 'Both',
     wave_direction: 'Both',
-    img_url: '../images/newportbeach.jpg'
+    img_url: './assets/images/newportbeach.jpeg'
   },
   {
     id:6,
@@ -82,7 +69,7 @@ var surfSpotArray = [
     perferred_board: 'Longboard',
     perferred_foot: 'Goofy',
     wave_direction: 'Left',
-    img_url: '../images/blackiesbeach.jpg'
+    img_url: './assets/images/blackiesbeach.jpg'
   },
   {
     id:7,
@@ -94,7 +81,7 @@ var surfSpotArray = [
     perferred_board: 'Thruster',
     perferred_foot: 'Goofy',
     wave_direction: 'Left',
-    img_url: '../images/saltcreekbeach.jpg'
+    img_url: './assets/images/saltcreekbeach.jpeg'
   },
   {
     id:8,
@@ -106,7 +93,7 @@ var surfSpotArray = [
     perferred_board: 'Longboard',
     perferred_foot: 'Regular',
     wave_direction: 'Right',
-    img_url: '../images/dohenybeach.jpg'
+    img_url: './assets/images/dohenybeach.png'
   },
   {
     id:9,
@@ -118,7 +105,7 @@ var surfSpotArray = [
     perferred_board: 'Quad',
     perferred_foot: 'Left',
     wave_direction: 'Left',
-    img_url: '../images/sanclementebeach.jpg'
+    img_url: './assets/images/sanclementebeach.jpg'
   },
   {
     id:10,
@@ -130,7 +117,7 @@ var surfSpotArray = [
     perferred_board: 'Thruster',
     perferred_foot: 'Both',
     wave_direction: 'Both',
-    img_url: '../images/tstreetbeach.jpg'
+    img_url: './assets/images/tstreetbeach.jpg'
   },
   {
     id:11,
@@ -142,7 +129,7 @@ var surfSpotArray = [
     perferred_board: 'Thruster',
     perferred_foot: 'Right',
     wave_direction: 'Right',
-    img_url: '../images/trestlesbeach.jpg'
+    img_url: './assets/images/trestlesbeach.jpg'
   },
   {
     id:12,
@@ -154,7 +141,7 @@ var surfSpotArray = [
     perferred_board: 'LongBoard',
     perferred_foot: 'Both',
     wave_direction: 'Both',
-    img_url: '../images/sanonofrebeach.jpg'
+    img_url: './assets/images/sanonofrebeach.jpg'
   }
 ]
 

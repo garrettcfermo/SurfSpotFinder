@@ -99,8 +99,9 @@
         </select>
       </div>
       <!-- Button trigger modal -->
-      <button type="button" class="btn btn-primary" id="submitAnswers" data-toggle="modal" data-target="#exampleModalCenter">
-        Submit Survey
+      <button type="button" onclick="requestSurfSpot()" class="btn btn-primary" id="submitAnswers" data-toggle="modal"
+        data-target="#exampleModalCenter">
+        Find Surf Spot
       </button>
 
       <!-- Modal -->
@@ -109,13 +110,19 @@
         <div class="modal-dialog modal-dialog-centered" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalCenterTitle">Recommended Surf Spot</h5>
+              <h5 class="modal-title" id="surfSpotName">Doheny Beach</h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
-            <div class="modal-body">
-              SURFSPOT PICKED
+            <div class="modal-body" id="surfSpotInfo">
+              <img id="surfspotPhoto"style="height:300px; width:100%;" src="./assets/images/dohenybeach.png" alt="">
+              <ul id="breakInfo">
+                <li id="beachtType"> Beach Type: Point Break </li>
+                <li id="perferredBoard"> Preferred Board: Longboard </li>
+                <li id="perferredFoot"> Preferred Foot: Regular </li>
+                <li id="waveDirection"> Wave Direction: Right </li>
+              </ul>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -134,6 +141,32 @@
     crossorigin="anonymous"></script>
 
   <script>
+
+    const requestSurfSpot = () => {
+
+      fetch('/surfspot', {
+        method: "Post",
+        headers: { "Content-Type": "application/json; charset=utf-8" },
+        body: JSON.stringify({ randNum: (Math.floor(Math.random() * 12)) })
+      })
+        .then(r => { console.log(r)})
+        .catch(e => console.error(e))
+
+      fetch('/surfspot')
+        .then(r => r.json())
+        .then(r => { 
+          console.log(r) 
+          document.getElementById("surfspotPhoto").src = r.img_url
+          document.querySelector("#surfSpotName").innerHTML= r.name
+          document.querySelector("#beachtType").innerHTML= `Beach Type : ${r.break}`
+          document.querySelector("#perferredBoard").innerHTML=`Preferred Board : ${r.perferred_board}`
+          document.querySelector("#perferredFoot").innerHTML=`Preferred Foot : ${r.perferred_foot}`
+          document.querySelector("#waveDirection").innerHTML=`Wave Direction : ${r.wave_direction}`
+        })
+        .catch(e => console.log(e))
+    }
+
+      
     $('#myModal').on('shown.bs.modal', function () {
       $('#myInput').trigger('focus')
     })
