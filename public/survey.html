@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Surf Spot Finder (Survey)</title>
+</head>
+
+<!-- Bootstrap Sytles -->
+<link rel="stylesheet" href="assets/CSS/reset.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+  crossorigin="anonymous">
+<link rel="stylesheet" href="assets/CSS/styles.css">
+
+
+
+<body>
+  <div class="container aboutInfo">
+    <h1>Surf Spot Survey Questions</h1>
+    <hr class="my-3">
+    <div class="container questions">
+      <div class="form-group question">
+        <label for="question1">
+          <h4> Question 1 </h4>
+        </label>
+        <p>Based on how comfortable you are surfing. Rank your surfing ability? (highest value being 5) </p>
+        <select class="form-control" id="question1">
+          <option>Select</option>
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+        </select>
+      </div>
+      <div class="form-group question">
+        <label for="question2">
+          <h4>Question 2</h4>
+        </label>
+        <p>What kind of surfboard do you perfer to ride?</p>
+        <select class="form-control" id="question2">
+          <option>Select</option>
+          <option>Longboard</option>
+          <option>Funboard</option>
+          <option>Quad</option>
+          <option>Thruster</option>
+        </select>
+      </div>
+      <div class="form-group question">
+        <label for="question3">
+          <h4>Question 3</h4>
+        </label>
+        <p>Are you Regular or Goofy footed?</p>
+        <select class="form-control" id="question3">
+          <option>Select</option>
+          <option>Regular</option>
+          <option>Goofy</option>
+        </select>
+      </div>
+      <div class="form-group question">
+        <label for="question4">
+          <h4>Question 4</h4>
+        </label>
+        <p>What kind of direction do you like to go on a wave? (Right or Left)</p>
+        <select class="form-control" id="question4">
+          <option>Select</option>
+          <option>Right</option>
+          <option>Left</option>
+          <option>Both</option>
+        </select>
+      </div>
+      <div class="form-group question">
+        <label for="question5">
+          <h4>Question 5</h4>
+        </label>
+        <p>What kind waves do you perfer slow/small or fast/big?</p>
+        <select class="form-control" id="question5">
+          <option>Select</option>
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+        </select>
+      </div>
+      <div class="form-group question">
+        <label for="question6">
+          <h4>Question 6</h4>
+        </label>
+        <p>What kind of surfbreak do you perfer?</p>
+        <select class="form-control" id="question6">
+          <option>Select</option>
+          <option>Beach Break</option>
+          <option>Point Break</option>
+          <option>Reef Break</option>
+          <option>Short Break</option>
+          <option>Beach/Point Break</option>
+        </select>
+      </div>
+      <!-- Button trigger modal -->
+      <button type="button" class="btn btn-primary" id="submitAnswers" data-toggle="modal" data-target="#exampleModalCenter">
+        Submit Survey
+      </button>
+
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalCenterTitle">Recommended Surf Spot</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              SURFSPOT PICKED
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- BootStrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    crossorigin="anonymous"></script>
+
+  <script>
+    $('#myModal').on('shown.bs.modal', function () {
+      $('#myInput').trigger('focus')
+    })
+  </script>
+
+</body>
+
+</html>
