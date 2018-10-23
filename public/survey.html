@@ -116,7 +116,7 @@
               </button>
             </div>
             <div class="modal-body" id="surfSpotInfo">
-              <img id="surfspotPhoto"style="height:300px; width:100%;" src="./assets/images/dohenybeach.png" alt="">
+              <img id="surfspotPhoto" style="height:300px; width:100%;" src="./assets/images/dohenybeach.png" alt="">
               <ul id="breakInfo">
                 <li id="beachtType"> Beach Type: Point Break </li>
                 <li id="perferredBoard"> Preferred Board: Longboard </li>
@@ -143,32 +143,48 @@
   <script>
 
     const requestSurfSpot = () => {
+      event.preventDefault()
+
+      let userInput = {
+         randNum : (Math.floor(Math.random() * 12)),
+         userSurfLevel : document.getElementById('question1').value,
+         userSurboard : document.getElementById('question2').value,
+         userFoot : document.getElementById('question3').value,
+         userDirection : document.getElementById('question4').value,
+         userWaveType : document.getElementById('question5').value,
+         userBreakType : document.getElementById('question6').value
+      }
+
 
       fetch('/surfspot', {
         method: "Post",
         headers: { "Content-Type": "application/json; charset=utf-8" },
-        body: JSON.stringify({ randNum: (Math.floor(Math.random() * 12)) })
+        body: JSON.stringify(userInput)
       })
-        .then(r => { console.log(r)})
+        .then(r => { console.log(r.status) })
         .catch(e => console.error(e))
 
       fetch('/surfspot')
         .then(r => r.json())
-        .then(r => { 
-          console.log(r) 
+        .then(r => {
           document.getElementById("surfspotPhoto").src = r.img_url
-          document.querySelector("#surfSpotName").innerHTML= r.name
-          document.querySelector("#beachtType").innerHTML= `Beach Type : ${r.break}`
-          document.querySelector("#perferredBoard").innerHTML=`Preferred Board : ${r.perferred_board}`
-          document.querySelector("#perferredFoot").innerHTML=`Preferred Foot : ${r.perferred_foot}`
-          document.querySelector("#waveDirection").innerHTML=`Wave Direction : ${r.wave_direction}`
+          document.querySelector("#surfSpotName").innerHTML = r.name
+          document.querySelector("#beachtType").innerHTML = `Beach Type : ${r.break}`
+          document.querySelector("#perferredBoard").innerHTML = `Preferred Board : ${r.perferred_board}`
+          document.querySelector("#perferredFoot").innerHTML = `Preferred Foot : ${r.perferred_foot}`
+          document.querySelector("#waveDirection").innerHTML = `Wave Direction : ${r.wave_direction}`
         })
         .catch(e => console.log(e))
+
+      for (let i = 1; i <= 6; i++) {
+        document.getElementById(`question${i}`).value = 'Select'
+      }
+    
     }
 
-      
     $('#myModal').on('shown.bs.modal', function () {
       $('#myInput').trigger('focus')
+
     })
   </script>
 

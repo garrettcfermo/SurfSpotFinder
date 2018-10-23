@@ -50,7 +50,7 @@ var surfSpotArray = [
   {
     id:5,
     name:'Newport Beach',
-    break: ' Beach/Point Break' ,
+    break: 'Beach/Point Break' ,
     wave_pace: 5,
     wave_size: 3,
     surfing_level: 4,
@@ -62,7 +62,7 @@ var surfSpotArray = [
   {
     id:6,
     name:'Blackies',
-    break: ' Pier Break' ,
+    break: 'Pier Break' ,
     wave_pace: 1,
     wave_size: 1,
     surfing_level: 1,
